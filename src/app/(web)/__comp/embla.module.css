@@ -1,0 +1,47 @@
+.embla {
+    overflow: hidden;
+}
+
+.embla__viewport {
+    overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+    margin-left: calc(1rem * -1);
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    padding-left: 1rem;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 480px) {
+    .embla__slide {
+        flex: 0 0 100%;
+    }
+}
+
+@media (min-width: 480px) {
+    .embla__slide {
+        flex: 0 0 50%;
+    }
+    
+    .embla__container {
+        margin-left: calc(0.75rem * -1);
+    }
+}
+
+@media (min-width: 768px) {
+    .embla__slide {
+        flex: 0 0 33.33333333333333%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .embla__slide {
+        flex: 0 0 25%;
+    }
+}

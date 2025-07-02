@@ -1,0 +1,290 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(98% 0 0);
+  --color-base-300: oklch(95% 0 0);
+  --color-base-content: oklch(27% 0.041 260.031);
+
+  --color-primary: oklch(65% 0.25 240);
+  --color-primary-content: oklch(98% 0.01 240);
+
+  --color-secondary: oklch(21% 0.034 264.665);
+  --color-secondary-content: oklch(86% 0.022 252.894);
+
+  --color-accent: oklch(96% 0.003 264.542);
+  --color-accent-content: oklch(44% 0.03 256.802);
+
+  --color-neutral: oklch(50% 0.05 240);
+  --color-neutral-content: oklch(98% 0.01 240);
+
+  --color-info: oklch(82% 0.111 230.318);
+  --color-info-content: oklch(98% 0.01 280);
+
+  --color-success: oklch(76% 0.233 130.85);
+  --color-success-content: oklch(98% 0.01 140);
+
+  --color-warning: oklch(83% 0.128 66.29);
+  --color-warning-content: oklch(40% 0.123 38.172);
+
+  --color-error: oklch(64% 0.246 16.439);
+  --color-error-content: oklch(98% 0.01 345);
+
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+
+  --depth: 1;
+  --noise: 0;
+}
+
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false;
+
+  --color-base-100: oklch(18% 0.05 240);
+  --color-base-200: oklch(25% 0.05 240);
+  --color-base-300: oklch(35% 0.05 240);
+  --color-base-content: oklch(97.807% 0.029 256.847);
+
+  --color-primary: oklch(65% 0.25 240);
+  --color-primary-content: oklch(98% 0.01 240);
+
+  --color-secondary: oklch(27% 0.033 256.848);
+  --color-secondary-content: oklch(87% 0.01 258.338);
+
+  --color-accent: oklch(86% 0.022 252.894);
+  --color-accent-content: oklch(44% 0.043 257.281);
+
+  --color-neutral: oklch(14% 0.005 285.823);
+  --color-neutral-content: oklch(92% 0.004 286.32);
+
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(37% 0.077 168.94);
+
+  --color-success: oklch(76% 0.177 163.223);
+  --color-success-content: oklch(37% 0.077 168.94);
+
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(41% 0.112 45.904);
+
+  --color-error: oklch(71% 0.194 13.428);
+  --color-error-content: oklch(27% 0.105 12.094);
+
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+
+  --depth: 1;
+  --noise: 0;
+}
+
+@utility input {
+  @apply focus:border-transparent focus:outline-primary;
+}
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme transitions */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--base-200));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--base-content) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--base-content) / 0.5);
+}
+
+/* Text selection */
+::selection {
+  background-color: hsl(var(--primary) / 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px hsl(var(--base-content) / 0.1);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: hsl(var(--base-100) / 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--base-content) / 0.1);
+}
+
+/* Loading skeleton */
+.skeleton {
+  animation: shimmer 1.2s ease-in-out infinite;
+  background: linear-gradient(90deg, hsl(var(--base-300)) 25%, hsl(var(--base-200)) 50%, hsl(var(--base-300)) 75%);
+  background-size: 468px 104px;
+}
+
+/* Custom utilities */
+.container {
+  max-width: 1200px;
+}
+
+/* Focus styles */
+.focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* Custom thin scrollbar for product info column */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--base-content) / 0.2);
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--base-content) / 0.4);
+}
+
+.scrollbar-thin::-webkit-scrollbar-corner {
+  background: transparent;
+}

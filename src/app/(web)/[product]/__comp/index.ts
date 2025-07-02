@@ -1,0 +1,12 @@
+export { default as ProductGallery } from './ProductGallery'
+export { default as ProductInfo } from './ProductInfo'
+export { default as ProductDescription } from './ProductDescription'
+export { default as ProductSpecifications } from './ProductSpecifications'
+export { default as StarRating } from './StarRating'
+export { default as QuantitySelector } from './QuantitySelector'
+export { default as AddToCartButton } from './AddToCartButton'
+export { default as ProductBreadcrumbs } from './ProductBreadcrumbs'
+// export { default as RecomendedProducts } from './RecomendedProducts' // Commented out - file not found
+export { ProductRecommendedCarousel, sampleRelatedProducts } from './ProductRecommendedCarousel'
+export { default as PaymentButtons } from './PaymentButtons'
+export { default as WhatsAppButton } from './WhatsAppButton' 

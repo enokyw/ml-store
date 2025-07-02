@@ -1,0 +1,25 @@
+.embla {
+    overflow: hidden;
+}
+
+.embla__viewport {
+    overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+    margin-left: calc(0.5rem * -1);
+}
+
+.embla__slide {
+    flex: 0 0 50%;
+    min-width: 0;
+    padding-left: 0.5rem;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .embla__slide {
+        flex: 0 0 100%;
+    }
+}
